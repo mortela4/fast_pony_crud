@@ -6,7 +6,7 @@ import os
 
 app = FastAPI()
 
-database_url = os.environ.get('DATABASE_URL')
+database_url = os.environ.get('DATABASE_URL')      # If NOT set (i.e. 'None' returned), use SQLite file as DB.
 if database_url:
     db.bind(provider='postgres', dsn=database_url)
 else: 
